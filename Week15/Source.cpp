@@ -11,26 +11,26 @@ void CheckAns(int* ptr1, int* ptr2);
 int main()
 {
 	srand(time(NULL));
-	char choice;
+	char choice[10];
 	int num[4] = { rand() % 100,rand() % 100, 0 , 0};
 	cout << "\tQuiz Math\n";
 	cout << "Choose Types of Quiz '+' '-' '*'\n";
 	cin >> choice;
 	do
 	{
-		if (choice != '+' && choice != '-' && choice != '*')
+		if (choice[0] != '+' && choice[0] != '-' && choice[0] != '*')
 		{
 			cout << "Pls choose '+' '-' '*' ONLY!!\n";
 			cin >> choice;
 		}
-	} while (choice != '+' && choice != '-' && choice != '*');
-	cout << "Quiz: " << num[0] << choice << num[1] << "\nAnswer: ";
+	} while (choice[0] != '+' && choice[0] != '-' && choice[0] != '*');
+	cout << "Quiz: " << num[0] << choice[0] << num[1] << "\nAnswer: ";
 
-	if (choice == '+')
+	if (choice[0] == '+')
 		num[2] = Addition(&num[0], &num[1]);
-	else if (choice == '-')
+	else if (choice[0] == '-')
 		num[2] = Subtraction(&num[0], &num[1]);
-	else if (choice == '*')
+	else if (choice[0] == '*')
 		num[2] = Multiply(&num[0], &num[1]);
 
 	cin >> num[3];
